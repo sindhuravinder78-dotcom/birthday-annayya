@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Annayya ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial;
+}
+
+h1 {
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    z-index: 1;
+}
+
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    top: -10px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎉 Happy Birthday Annayya ❤️ 🎉</h1>
+
+<script>
+function createConfetti() {
+    for (let i = 0; i < 100; i++) {
+        let confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+
+        confetti.style.left = Math.random() * window.innerWidth + "px";
+        confetti.style.backgroundColor = 
+            "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+
+        confetti.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+        document.body.appendChild(confetti);
+    }
+}
+
+// Run when page opens
+createConfetti();
+</script>
+
+</body>
+</html>
